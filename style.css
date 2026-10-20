@@ -1,0 +1,604 @@
+/* ==========================================================================
+   PALETA DE CORES & VARIÁVEIS
+   ========================================================================== */
+:root {
+    --bg-dark: #0A111E;        /* Azul Marinho Quase Preto (Fundo Hero e Header) */
+    --navy-blue: #0F1C30;      /* Azul Marinho Principal */
+    --navy-card: #16243D;      /* Azul para Cards e Destaques */
+    --gold: #D4AF37;           /* Amarelo Dourado para CTAs principais */
+    --gold-hover: #B89628;
+    --cyan: #00D2FF;           /* Azul Ciano para detalhes de Refrigeração/HVAC */
+    --text-white: #FFFFFF;
+    --text-silver: #C2CBD8;     /* Prata/Cinza Claro para leitura */
+    --text-muted: #8391A5;
+    --border-color: #21324E;
+    --font-main: 'Inter', sans-serif;
+}
+
+/* ==========================================================================
+   RESET E BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--navy-blue);
+    color: var(--text-silver);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-white);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.icon-gold {
+    color: var(--gold);
+}
+
+.icon-cyan {
+    color: var(--cyan);
+}
+
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: #0A111E;
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.btn-lg {
+    padding: 15px 32px;
+    font-size: 1.05rem;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.header {
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-white);
+    letter-spacing: 1px;
+}
+
+.logo-text .highlight {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-silver);
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--navy-blue) 100%);
+    padding: 100px 0 120px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.badge {
+    background-color: rgba(0, 210, 255, 0.1);
+    color: var(--cyan);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-silver);
+    margin-bottom: 35px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   SOBRE NÓS
+   ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.section-subtitle {
+    color: var(--cyan);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin: 10px 0 20px 0;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-highlights {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.highlight-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.highlight-item i {
+    font-size: 1.5rem;
+    margin-top: 3px;
+}
+
+.about-card {
+    background-color: var(--navy-card);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 12px;
+    display: grid;
+    gap: 20px;
+}
+
+.stat-box h3 {
+    font-size: 2.5rem;
+    color: var(--gold);
+}
+
+.stat-box p {
+    color: var(--text-silver);
+}
+
+.region-info {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+/* ==========================================================================
+   SERVIÇOS
+   ========================================================================== */
+.section-title {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    margin-top: 10px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background-color: var(--navy-card);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+}
+
+.service-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.cta-box {
+    margin-top: 60px;
+    background-color: var(--navy-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--gold);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   DEPOIMENTOS
+   ========================================================================== */
+.testimonials {
+    background-color: var(--bg-dark);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.testimonial-card {
+    background-color: var(--navy-card);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stars {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.client-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.client-info strong {
+    color: var(--text-white);
+}
+
+.client-info span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   CONTATO
+   ========================================================================== */
+.contact-box {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.info-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--text-white);
+}
+
+.info-item a {
+    color: var(--text-silver);
+}
+
+.info-item a:hover {
+    color: var(--gold);
+}
+
+.contact-cta-card {
+    background-color: var(--navy-card);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.contact-cta-card h3 {
+    margin-bottom: 15px;
+}
+
+.contact-cta-card p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   RODAPÉ & WHATSAPP FLUTUANTE
+   ========================================================================== */
+.footer {
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.tagline {
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 15px;
+        font-size: 0.85rem;
+    }
+    .header-btn {
+        display: none; /* Esconde o botão do topo no mobile para economizar espaço */
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero-btns {
+        flex-direction: column;
+    }
+    .about-grid, .contact-box {
+        grid-template-columns: 1fr;
+    }
+}   
+    /* ==========================================================================
+   CARROSSEL DA GALERIA (SWIPER)
+   ========================================================================== */
+.gallery {
+    background-color: var(--navy-blue);
+}
+
+.swiper {
+    width: 100%;
+    padding-bottom: 50px !important; /* Espaço para as bolinhas de navegação */
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--navy-card);
+    height: 280px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Setas douradas e bolinhas de navegação */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--gold) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--gold) !important;
+}
+
+.swiper-pagination-bullet {
+    background: var(--text-silver);
+}
+
+/* ==========================================================================
+   EFEITO DE FUSÃO NA IMAGEM DE FUNDO DO HERO
+   ========================================================================== */
+.hero-fundo {
+    position: relative;
+    background: linear-gradient(90deg, var(--navy-blue) 40%, rgba(10, 17, 30, 0.7) 70%, transparent 100%), 
+                url('tecnico-bg.jpeg');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+/* Ajuste para ecrã de telemóvel */
+@media (max-width: 768px) {
+    .hero-fundo {
+        background: linear-gradient(180deg, rgba(10, 17, 30, 0.9) 0%, rgba(10, 17, 30, 0.95) 100%), 
+                    url('tecnico-bg.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* DESTAQUE DA MARCA NO HERO */
+.hero-brand {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--gold); /* Ou use a cor de destaque do seu tema */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}/* ==========================================================================
+   ALINHAMENTO CENTRALIZADO DO HERO + CETRON
+   ========================================================================== */
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-brand {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--gold, #f39c12);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.hero-brand {
+    display: block;
+    font-size: 4rem; /* Aumente para 4rem se quiser ainda maior */
+    font-weight: 900;
+    color: #ffffff; /* Cor branca */
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra leve para destacar no fundo */
+}
